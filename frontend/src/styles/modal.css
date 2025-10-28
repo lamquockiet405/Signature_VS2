@@ -1,0 +1,78 @@
+/* Modal Backdrop with Blur Effect */
+.modal-backdrop {
+  @apply fixed inset-0 backdrop-blur-sm bg-black/30 flex items-center justify-center z-50;
+}
+
+.modal-backdrop-overflow {
+  @apply fixed inset-0 backdrop-blur-sm bg-black/30 flex items-center justify-center z-50 overflow-y-auto;
+}
+
+/* Modal Content */
+.modal-content {
+  @apply bg-white rounded-lg shadow-2xl;
+}
+
+.modal-content-sm {
+  @apply bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto;
+}
+
+.modal-content-md {
+  @apply bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto;
+}
+
+.modal-content-lg {
+  @apply bg-white rounded-lg shadow-2xl w-full max-w-3xl my-8 mx-4;
+}
+
+.modal-content-xl {
+  @apply bg-white rounded-lg shadow-2xl w-full max-w-5xl my-8 mx-4;
+}
+
+/* Modal Header */
+.modal-header {
+  @apply flex justify-between items-center mb-6;
+}
+
+.modal-title {
+  @apply text-xl font-semibold text-gray-900;
+}
+
+.modal-close-button {
+  @apply text-gray-400 hover:text-gray-600 transition-colors;
+}
+
+/* Modal Body */
+.modal-body {
+  @apply p-6;
+}
+
+/* Modal Footer */
+.modal-footer {
+  @apply flex justify-end space-x-3 mt-6;
+}
+
+/* Side Modal (for Add User) */
+.side-modal-backdrop {
+  @apply fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-end;
+}
+
+.side-modal-content {
+  @apply bg-white w-full max-w-md h-full shadow-2xl overflow-y-auto;
+}
+
+/* Animation Classes */
+.modal-enter {
+  @apply opacity-0;
+}
+
+.modal-enter-active {
+  @apply opacity-100 transition-opacity duration-300;
+}
+
+.modal-exit {
+  @apply opacity-100;
+}
+
+.modal-exit-active {
+  @apply opacity-0 transition-opacity duration-300;
+}

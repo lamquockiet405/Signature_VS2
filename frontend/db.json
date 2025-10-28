@@ -1,0 +1,253 @@
+{
+  "stats": {
+    "drafts": 200425.87,
+    "actionNeeded": 9528,
+    "pending": 849.54,
+    "completed": 9528,
+    "totalDocumentsPercent": 4.26,
+    "userGrowth": 3768
+  },
+  "documentStats": {
+    "totalUploaded": 100,
+    "totalCompleted": 90,
+    "totalWaiting": 7,
+    "totalRejected": 3
+  },
+  "documents": [
+    {
+      "id": "#323534",
+      "name": "Audit Reports",
+      "type": "Reports",
+      "signer": "Lindsey Curtis",
+      "uploaded": "2027-02-12",
+      "status": "Completed"
+    },
+    {
+      "id": "#323534",
+      "name": "Banking Authorization Forms",
+      "type": "Forms",
+      "signer": "Kaiya George",
+      "uploaded": "2027-03-13",
+      "status": "Waiting"
+    },
+    {
+      "id": "#323534",
+      "name": "Financial Statements",
+      "type": "Reports",
+      "signer": "Zein Geidt",
+      "uploaded": "2027-03-19",
+      "status": "Completed"
+    },
+    {
+      "id": "#323534",
+      "name": "Invoices and Receipts",
+      "type": "Invoices",
+      "signer": "Abram Schleifer",
+      "uploaded": "2027-04-25",
+      "status": "Completed"
+    },
+    {
+      "id": "#323534",
+      "name": "Payment Requests and Approvals",
+      "type": "Approvals",
+      "signer": "Carla George",
+      "uploaded": "2027-05-11",
+      "status": "Completed"
+    },
+    {
+      "id": "#323534",
+      "name": "Performance Appraisal Forms",
+      "type": "Forms",
+      "signer": "Emery Culhane",
+      "uploaded": "2027-06-29",
+      "status": "Completed"
+    },
+    {
+      "id": "#323534",
+      "name": "Salary Adjustment Approvals",
+      "type": "Approvals",
+      "signer": "Livia Donin",
+      "uploaded": "2027-07-22",
+      "status": "Rejected"
+    },
+    {
+      "id": "#323534",
+      "name": "Employment Contracts",
+      "type": "Contracts",
+      "signer": "Miracle Bator",
+      "uploaded": "2027-08-05",
+      "status": "Completed"
+    },
+    {
+      "id": "#323534",
+      "name": "Purchase Orders (POs)",
+      "type": "Receipts",
+      "signer": "Lincoln Herwitz",
+      "uploaded": "2027-09-09",
+      "status": "Waiting"
+    },
+    {
+      "id": "#323534",
+      "name": "Contracts and Agreements",
+      "type": "Agreements",
+      "signer": "Ekstrom Bothman",
+      "uploaded": "2027-11-15",
+      "status": "Completed"
+    }
+  ],
+  "recentDocuments": [
+    {
+      "serialNo": "#DF429",
+      "dueDate": "2016-04-28",
+      "assignee": "John Doe",
+      "email": "johndoe@gmail.com",
+      "status": "Complete"
+    },
+    {
+      "serialNo": "#HTY274",
+      "dueDate": "2017-10-30",
+      "assignee": "John Doe",
+      "email": "johndoe@gmail.com",
+      "status": "Complete"
+    },
+    {
+      "serialNo": "#LKE600",
+      "dueDate": "2017-05-29",
+      "assignee": "John Doe",
+      "email": "johndoe@gmail.com",
+      "status": "Pending"
+    },
+    {
+      "serialNo": "#HRP447",
+      "dueDate": "2015-05-20",
+      "assignee": "John Doe",
+      "email": "johndoe@gmail.com",
+      "status": "Cancelled"
+    },
+    {
+      "serialNo": "#WRH647",
+      "dueDate": "2014-03-13",
+      "assignee": "John Doe",
+      "email": "johndoe@gmail.com",
+      "status": "Complete"
+    }
+  ],
+  "activities": [
+    {
+      "user": "Francisco Grbbs",
+      "action": "created invoice",
+      "doc": "PG-4491C",
+      "time": "Just Now"
+    },
+    {
+      "user": "Courtney Henry",
+      "action": "created invoice",
+      "doc": "HK-234G",
+      "time": "15 minutes ago"
+    },
+    {
+      "user": "Bessie Cooper",
+      "action": "created invoice",
+      "doc": "LH-2891C",
+      "time": "5 months ago"
+    },
+    {
+      "user": "Theresa Web",
+      "action": "created invoice",
+      "doc": "CK-125NH",
+      "time": "2 weeks ago"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Lindsey Curtis",
+      "email": "lindsey@example.com",
+      "role": "Sales Assistant",
+      "status": "Active",
+      "avatar": "LC",
+      "added": "12 Feb, 2027"
+    },
+    {
+      "id": 2,
+      "name": "Kaiya George",
+      "email": "kaiya@example.com",
+      "role": "CEO",
+      "status": "Inactive",
+      "avatar": "KG",
+      "added": "13 Mar, 2027"
+    },
+    {
+      "id": 3,
+      "name": "Zein Geidt",
+      "email": "zein76@example.com",
+      "role": "Signer",
+      "status": "Draft",
+      "avatar": "ZG",
+      "added": "12 Mar, 2027"
+    },
+    {
+      "id": 4,
+      "name": "Abram Schleifer",
+      "email": "abram@example.com",
+      "role": "HR",
+      "status": "Active",
+      "avatar": "AS",
+      "added": "25 Apr, 2027"
+    },
+    {
+      "id": 5,
+      "name": "Carla George",
+      "email": "carla66@example.com",
+      "role": "Sales Assistant",
+      "status": "Active",
+      "avatar": "CG",
+      "added": "11 May, 2027"
+    },
+    {
+      "id": 6,
+      "name": "Emery Culhane",
+      "email": "emery09@example.com",
+      "role": "Marketing Coordinator",
+      "status": "Active",
+      "avatar": "EC",
+      "added": "29 Jun, 2027"
+    },
+    {
+      "id": 7,
+      "name": "Livia Donin",
+      "email": "livia53@example.com",
+      "role": "Product Manager",
+      "status": "Inactive",
+      "avatar": "LD",
+      "added": "22 Jul, 2027"
+    },
+    {
+      "id": 8,
+      "name": "Miracle Bator",
+      "email": "miracle@example.com",
+      "role": "Data Analyst",
+      "status": "Active",
+      "avatar": "MB",
+      "added": "05 Aug, 2027"
+    },
+    {
+      "id": 9,
+      "name": "Lincoln Herwitz",
+      "email": "lincoln@example.com",
+      "role": "Graphic Designer",
+      "status": "Active",
+      "avatar": "LH",
+      "added": "09 Sep, 2027"
+    },
+    {
+      "id": 10,
+      "name": "Ekstrom Bothman",
+      "email": "ekstrom@example.com",
+      "role": "Data Analyst",
+      "status": "Draft",
+      "avatar": "EB",
+      "added": "15 Nov, 2027"
+    }
+  ]
+}
