@@ -2,7 +2,7 @@ import { DatabaseService } from '../../database/database.service';
 
 /**
  * Filtered Log Helper - Chỉ lưu các log quan trọng liên quan đến file, ủy quyền và ký
- * 
+ *
  * Các action được phép log:
  * - FILE_*: Tất cả các thao tác với file
  * - DELEGATION_*: Tất cả các thao tác ủy quyền
@@ -15,11 +15,11 @@ export class FilteredLogHelper {
   private static readonly ALLOWED_ACTIONS = [
     // File operations
     'FILE_UPLOAD',
-    'FILE_DOWNLOAD', 
+    'FILE_DOWNLOAD',
     'FILE_DELETE',
     'FILE_UPDATE',
     'FILE_SIGN',
-    
+
     // Delegation operations
     'DELEGATION_CREATE',
     'DELEGATION_UPDATE',
@@ -27,7 +27,7 @@ export class FilteredLogHelper {
     'DELEGATION_APPROVE',
     'DELEGATION_REJECT',
     'DELEGATION_CANCEL',
-    
+
     // Workflow operations
     'WORKFLOW_DELEGATION_CREATE',
     'WORKFLOW_APPROVAL_CREATE',
@@ -36,17 +36,17 @@ export class FilteredLogHelper {
     'WORKFLOW_SIGNED',
     'WORKFLOW_CANCELLED',
     'NOTIFICATION_APPROVAL_REQUEST',
-    
+
     // Document signing
     'DOCUMENT_SIGN',
     'DOCUMENT_APPROVE',
     'DOCUMENT_REJECT',
-    
+
     // TOTP operations
     'TOTP_SETUP',
     'TOTP_VERIFY',
     'TOTP_ENABLED',
-    
+
     // HSM operations
     'HSM_SIGN',
     'HSM_VERIFY',
@@ -55,7 +55,7 @@ export class FilteredLogHelper {
   // Danh sách các module được phép log
   private static readonly ALLOWED_MODULES = [
     'files',
-    'delegations', 
+    'delegations',
     'workflow',
     'signature',
     'totp',
@@ -94,7 +94,9 @@ export class FilteredLogHelper {
     try {
       // Kiểm tra xem có nên log không
       if (!this.isActionAllowed(params.action)) {
-        console.log(`🔇 Skipping log for ${params.action} - not in allowed list`);
+        console.log(
+          `🔇 Skipping log for ${params.action} - not in allowed list`,
+        );
         return false;
       }
 
@@ -127,7 +129,12 @@ export class FilteredLogHelper {
     databaseService: DatabaseService,
     params: {
       userId: string | number;
-      action: 'FILE_UPLOAD' | 'FILE_DOWNLOAD' | 'FILE_DELETE' | 'FILE_UPDATE' | 'FILE_SIGN';
+      action:
+        | 'FILE_UPLOAD'
+        | 'FILE_DOWNLOAD'
+        | 'FILE_DELETE'
+        | 'FILE_UPDATE'
+        | 'FILE_SIGN';
       fileName: string;
       fileId?: string;
       fileSize?: number;
@@ -155,7 +162,13 @@ export class FilteredLogHelper {
     databaseService: DatabaseService,
     params: {
       userId: string | number;
-      action: 'DELEGATION_CREATE' | 'DELEGATION_UPDATE' | 'DELEGATION_DELETE' | 'DELEGATION_APPROVE' | 'DELEGATION_REJECT' | 'DELEGATION_CANCEL';
+      action:
+        | 'DELEGATION_CREATE'
+        | 'DELEGATION_UPDATE'
+        | 'DELEGATION_DELETE'
+        | 'DELEGATION_APPROVE'
+        | 'DELEGATION_REJECT'
+        | 'DELEGATION_CANCEL';
       delegationId: string;
       delegatorName: string;
       delegateName: string;
@@ -185,7 +198,14 @@ export class FilteredLogHelper {
     databaseService: DatabaseService,
     params: {
       userId: string | number;
-      action: 'WORKFLOW_DELEGATION_CREATE' | 'WORKFLOW_APPROVAL_CREATE' | 'WORKFLOW_APPROVED' | 'WORKFLOW_REJECTED' | 'WORKFLOW_SIGNED' | 'WORKFLOW_CANCELLED' | 'NOTIFICATION_APPROVAL_REQUEST';
+      action:
+        | 'WORKFLOW_DELEGATION_CREATE'
+        | 'WORKFLOW_APPROVAL_CREATE'
+        | 'WORKFLOW_APPROVED'
+        | 'WORKFLOW_REJECTED'
+        | 'WORKFLOW_SIGNED'
+        | 'WORKFLOW_CANCELLED'
+        | 'NOTIFICATION_APPROVAL_REQUEST';
       workflowId: string;
       workflowType: string;
       documentName?: string;
@@ -250,7 +270,9 @@ export class FilteredLogHelper {
       userId: params.userId,
       action: params.action,
       module: 'totp',
-      description: params.description || `${params.action.replace('_', ' ')} for user ${params.userId}`,
+      description:
+        params.description ||
+        `${params.action.replace('_', ' ')} for user ${params.userId}`,
       metadata: {
         ...params.metadata,
       },

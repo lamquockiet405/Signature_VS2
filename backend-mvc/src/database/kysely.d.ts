@@ -12,4 +12,3 @@ declare module 'kysely' {
 }
 
 export {};
-

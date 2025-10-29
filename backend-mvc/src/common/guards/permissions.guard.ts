@@ -92,9 +92,7 @@ export class PermissionsGuard implements CanActivate {
 
     // 7. Check if user has wildcard permission (Super Admin)
     if (userPermissions.includes('*')) {
-      console.log(
-        `✅ Super Admin access granted for ${userId} to ${needed}`,
-      );
+      console.log(`✅ Super Admin access granted for ${userId} to ${needed}`);
       return true;
     }
 
@@ -113,7 +111,8 @@ export class PermissionsGuard implements CanActivate {
     ) {
       try {
         const params = request.params || {};
-        const resourceId = params.id || params.workflowId || params.delegationId;
+        const resourceId =
+          params.id || params.workflowId || params.delegationId;
         console.log(
           `[PERMISSION GUARD] Ownership check: extracted resourceId =`,
           resourceId,
@@ -173,7 +172,8 @@ export class PermissionsGuard implements CanActivate {
 
     throw new ForbiddenException({
       statusCode: 403,
-      message: 'Bạn không có quyền truy cập chức năng này. Vui lòng liên hệ với quản trị viên.',
+      message:
+        'Bạn không có quyền truy cập chức năng này. Vui lòng liên hệ với quản trị viên.',
       error: 'Forbidden',
       required: needed,
       userRole: user.role,

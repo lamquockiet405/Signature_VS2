@@ -14,4 +14,3 @@
 /// <reference path="./node-signpdf-helpers.d.ts" />
 
 export {};
-

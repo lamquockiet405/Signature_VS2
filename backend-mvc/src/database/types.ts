@@ -3,7 +3,13 @@
  * Defines all tables and their columns
  */
 
-import { ColumnType, Generated, Insertable, Selectable, Updateable } from 'kysely';
+import {
+  ColumnType,
+  Generated,
+  Insertable,
+  Selectable,
+  Updateable,
+} from 'kysely';
 
 // ============================================
 // TABLE: users
@@ -212,4 +218,3 @@ export type CompanyUpdate = Updateable<CompanyTable>;
 export type DelegationUpdate = Updateable<DelegationsTable>;
 export type AuditLogUpdate = Updateable<AuditLogsTable>;
 export type LogUpdate = Updateable<LogsTable>;
-

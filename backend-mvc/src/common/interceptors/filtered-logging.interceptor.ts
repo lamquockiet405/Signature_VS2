@@ -29,8 +29,8 @@ export class FilteredLoggingInterceptor implements NestInterceptor {
 
     // Skip logging for certain routes
     const skipRoutes = [
-      '/api/logs', 
-      '/health', 
+      '/api/logs',
+      '/health',
       '/favicon.ico',
       '/api/auth/me',
       '/api/users/profile',
@@ -109,7 +109,7 @@ export class FilteredLoggingInterceptor implements NestInterceptor {
   private shouldLogAction(action: string, module: string): boolean {
     const allowedActions = FilteredLogHelper.getAllowedActions();
     const allowedModules = FilteredLogHelper.getAllowedModules();
-    
+
     return allowedActions.includes(action) && allowedModules.includes(module);
   }
 
@@ -167,29 +167,37 @@ export class FilteredLoggingInterceptor implements NestInterceptor {
    * Xác định module từ URL
    */
   private getModuleFromUrl(url: string): string {
-    if (url.includes('/api/files') || url.includes('/api/documents')) return 'files';
+    if (url.includes('/api/files') || url.includes('/api/documents'))
+      return 'files';
     if (url.includes('/api/delegations')) return 'delegations';
     if (url.includes('/api/workflows')) return 'workflow';
     if (url.includes('/api/document-signatures')) return 'signature';
     if (url.includes('/api/auth/totp')) return 'totp';
     if (url.includes('/api/hsm')) return 'hsm';
-    
+
     return '';
   }
 
   /**
    * Lấy thông tin chi tiết từ request
    */
-  private getDetailsFromRequest(method: string, url: string, body: any, data: any): string {
+  private getDetailsFromRequest(
+    method: string,
+    url: string,
+    body: any,
+    data: any,
+  ): string {
     // File operations
     if (url.includes('/api/files') || url.includes('/api/documents')) {
-      const fileName = body?.name || body?.filename || data?.name || 'Unknown file';
+      const fileName =
+        body?.name || body?.filename || data?.name || 'Unknown file';
       return `${method.toUpperCase()} file: ${fileName}`;
     }
 
     // Document signing
     if (url.includes('/api/document-signatures')) {
-      const documentName = body?.documentName || data?.documentName || 'Unknown document';
+      const documentName =
+        body?.documentName || data?.documentName || 'Unknown document';
       if (url.includes('/sign')) return `Signed document: ${documentName}`;
       if (url.includes('/approve')) return `Approved document: ${documentName}`;
       if (url.includes('/reject')) return `Rejected document: ${documentName}`;
@@ -197,14 +205,17 @@ export class FilteredLoggingInterceptor implements NestInterceptor {
 
     // Delegations
     if (url.includes('/api/delegations')) {
-      const delegatorName = body?.delegator_name || data?.delegator_name || 'Unknown delegator';
-      const delegateName = body?.delegate_name || data?.delegate_name || 'Unknown delegate';
+      const delegatorName =
+        body?.delegator_name || data?.delegator_name || 'Unknown delegator';
+      const delegateName =
+        body?.delegate_name || data?.delegate_name || 'Unknown delegate';
       return `${method.toUpperCase()} delegation: ${delegatorName} → ${delegateName}`;
     }
 
     // Workflows
     if (url.includes('/api/workflows')) {
-      const workflowType = body?.workflow_type || data?.workflow_type || 'Unknown type';
+      const workflowType =
+        body?.workflow_type || data?.workflow_type || 'Unknown type';
       return `${method.toUpperCase()} workflow: ${workflowType}`;
     }
 

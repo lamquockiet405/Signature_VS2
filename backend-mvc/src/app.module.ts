@@ -5,11 +5,11 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 
 // Main modules
-import { AuthModule } from './modules/auth/auth.module';
-import { UserModule } from './modules/user/user.module';
-import { CompanyModule } from './modules/company/company.module';
-import { DocumentModule } from './modules/document/document.module';
-import { HsmModule } from './modules/hsm/hsm.module';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
+import { CompanyModule } from './company/company.module';
+import { DocumentModule } from './document/document.module';
+import { HsmModule } from './hsm/hsm.module';
 
 import { FilteredLoggingInterceptor } from './common/interceptors/filtered-logging.interceptor';
 

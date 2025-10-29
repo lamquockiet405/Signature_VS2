@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  # Backend Database (Main Application)
+  signature_teknix:
+    image: postgres:16
+    container_name: signature_teknix
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - signature_data:/var/lib/postgresql/data
+      - ./backend-mvc/signature.sql:/docker-entrypoint-initdb.d/10-signature.sql:ro
+    networks:
+      - signature_network
+
+  # HSM Database (Hardware Security Module)
+  hsm:
+    image: postgres:16
+    container_name: hsm
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - hsm_data:/var/lib/postgresql/data
+      - ./hsm-mvc/hsm.sql:/docker-entrypoint-initdb.d/10-hsm.sql:ro
+    networks:
+      - signature_network
+
+volumes:
+  signature_data:
+  hsm_data:
+
+networks:
+  signature_network:
+    driver: bridge
